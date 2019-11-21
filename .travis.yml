@@ -1,0 +1,11 @@
+install:
+  - 'npm install'
+language: node_js
+node_js:
+  - stable
+  - node
+script:
+  - 'npm run test'
+  - npm run coveralls
+services:
+  - postgresql
