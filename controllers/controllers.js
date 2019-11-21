@@ -6,25 +6,25 @@ const jwt = require('jsonwebtoken');
 const upload = require('../filehandler/multer-config');
 const cloudinary = require('../filehandler/cloudinary');
 const fs = require('fs');
-//const dotenv = require('dotenv');
+const dotenv = require('dotenv');
 
-//dotenv.config();
+dotenv.config();
 
 
 const pool = new Pool({
-	user:'postgres',
-	host:'localhost',
-	database:'Teamwork employees',
-	password:'PostgreSQL',
-	port:5432,
+	user: process.env.USER',
+	host: process.env.HOST,
+	database: process.env.DATABASE,
+	password: process.env.PASSWORD,
+	port: process.env.POST,
 });
 
 const client = new Client({
-	user:'postgres',
-	host:'localhost',
-	database:'Teamwork employees',
-	password:'PostgreSQL',
-	port:5432,
+	user: process.env.USER,
+	host: process.env.HOST,
+	database: process.env.DATABASE',
+	password: process.env.PASSWORD,
+	port: process.env.USER,
 });
 client.connect()
    .then(() => {
